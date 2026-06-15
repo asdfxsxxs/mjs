@@ -57,11 +57,8 @@
     },
     "领取奖励": {
         "recognition": "OCR",
-        "pre_delay": 500,
-        "post_delay": 500,
         "action": "Click",
         "expected": "领取奖励",
-        "timeout": 2000,
         "next": [
             "开始千里单骑"
         ]
@@ -79,11 +76,8 @@
     },
     "千里单骑": {
         "recognition": "OCR",
-        "pre_delay": 500,
-        "post_delay": 500,
         "action": "Click",
         "expected": "千里单骑",
-        "timeout": 3000,
         "next": [
             "开始挑战",
             "继续挑战"
@@ -91,24 +85,18 @@
     },
     "继续挑战": {
         "recognition": "OCR",
-        "pre_delay": 500,
-        "post_delay": 500,
         "action": "Click",
         "expected": "继续挑战",
-        "timeout": 2000,
         "next": [
             "选择战斗或事件"
         ]
     },
     "开始挑战": {
         "recognition": "FeatureMatch",
-        "pre_delay": 500,
-        "post_delay": 500,
         "action": "Click",
         "template": [
             "开始挑战.png"
         ],
-        "timeout": 3000,
         "next": [
             "选择战斗或事件"
         ]
@@ -121,14 +109,17 @@
             472
         ],
         "recognition": "FeatureMatch",
-        "pre_delay": 300,
-        "post_delay": 300,
         "action": "Click",
+        "target_offset": [
+            0,
+            -20,
+            0,
+            0
+        ],
         "template": [
             "战斗.png",
             "战斗2.png"
         ],
-        "timeout": 2000,
         "next": [
             "开始对局"
         ],
@@ -137,8 +128,6 @@
     "单击屏幕": {
         "recognition": "DirectHit",
         "action": "Click",
-        "pre_delay": 300,
-        "post_delay": 300,
         "next": [
             "选择战斗或事件"
         ]
@@ -149,21 +138,16 @@
         "action": "Click",
         "repeat": 2,
         "repeat_wait_freezes": 1000,
-        "pre_delay": 500,
-        "post_delay": 500,
         "template": [
             "火堆.png",
             "火堆2.png"
         ],
-        "timeout": 2000,
         "next": [
             "选择选项"
         ]
     },
     "肥肥": {
         "recognition": "FeatureMatch",
-        "pre_delay": 500,
-        "post_delay": 500,
         "count": 2,
         "action": "Click",
         "repeat": 2,
@@ -171,37 +155,28 @@
         "template": [
             "肥肥.png"
         ],
-        "timeout": 2000,
         "next": [
             "肥肥事件1"
         ]
     },
     "肥肥事件1": {
         "recognition": "OCR",
-        "pre_delay": 500,
-        "post_delay": 500,
         "action": "Click",
         "expected": "选择事件",
-        "timeout": 3000,
         "next": [
             "肥肥事件2"
         ]
     },
     "肥肥事件2": {
         "recognition": "OCR",
-        "pre_delay": 500,
-        "post_delay": 500,
         "action": "Click",
         "expected": "讨价还价",
-        "timeout": 3000,
         "next": [
             "选择战斗或事件"
         ]
     },
     "左慈": {
         "recognition": "FeatureMatch",
-        "pre_delay": 500,
-        "post_delay": 500,
         "count": 2,
         "repeat": 2,
         "repeat_wait_freezes": 1000,
@@ -209,7 +184,6 @@
         "template": [
             "左慈.png"
         ],
-        "timeout": 2000,
         "next": [
             "左慈选择武将",
             "信物",
@@ -220,30 +194,22 @@
     },
     "左慈选择武将": {
         "recognition": "OCR",
-        "pre_delay": 500,
-        "post_delay": 500,
         "action": "Click",
         "expected": "选择武将",
-        "timeout": 3000,
         "next": [
             "戏法二"
         ]
     },
     "戏法二": {
         "recognition": "OCR",
-        "pre_delay": 500,
-        "post_delay": 500,
         "action": "Click",
         "expected": "戏法二",
-        "timeout": 2000,
         "next": [
             "单击屏幕"
         ]
     },
     "诸葛亮": {
         "recognition": "FeatureMatch",
-        "pre_delay": 500,
-        "post_delay": 500,
         "count": 5,
         "action": "Click",
         "repeat": 2,
@@ -251,29 +217,23 @@
         "template": [
             "诸葛亮.png"
         ],
-        "timeout": 2000,
         "next": [
             "诸葛亮选择武将"
         ]
     },
     "诸葛亮选择武将": {
         "recognition": "FeatureMatch",
-        "pre_delay": 500,
-        "post_delay": 500,
         "count": 2,
         "action": "Click",
         "template": [
             "卡背.png"
         ],
-        "timeout": 2000,
         "next": [
             "单击屏幕"
         ]
     },
     "吕不韦商店": {
         "recognition": "FeatureMatch",
-        "pre_delay": 500,
-        "post_delay": 500,
         "count": 4,
         "repeat": 2,
         "repeat_wait_freezes": 1000,
@@ -281,7 +241,6 @@
         "template": [
             "吕不韦商店.png"
         ],
-        "timeout": 2000,
         "next": [
             "返回",
             "单击屏幕"
@@ -289,8 +248,6 @@
     },
     "巴清商店": {
         "recognition": "FeatureMatch",
-        "pre_delay": 500,
-        "post_delay": 500,
         "count": 5,
         "repeat": 2,
         "repeat_wait_freezes": 1000,
@@ -298,40 +255,32 @@
         "template": [
             "巴清商店.png"
         ],
-        "timeout": 2000,
         "next": [
             "返回",
             "单击屏幕"
         ]
     },
     "返回": {
-        "recognition": "FeatureMatch",
-        "pre_delay": 500,
-        "post_delay": 500,
+        "recognition": "DirectHit",
         "action": "Click",
-        "template": [
-            "返回.png"
+        "target": [
+            -50,
+            90
         ],
-        "timeout": 2000,
         "next": [
             "返回确认"
         ]
     },
     "返回确认": {
         "recognition": "OCR",
-        "pre_delay": 500,
-        "post_delay": 500,
         "action": "Click",
         "expected": "确认",
-        "timeout": 2000,
         "next": [
             "选择战斗或事件"
         ]
     },
     "选择选项": {
         "recognition": "ColorMatch",
-        "pre_delay": 500,
-        "post_delay": 500,
         "action": "Click",
         "lower": [
             115,
@@ -343,7 +292,6 @@
             205,
             113
         ],
-        "timeout": 2000,
         "next": [
             "遇袭",
             "选择战斗或事件"
@@ -351,33 +299,24 @@
     },
     "遇袭": {
         "recognition": "OCR",
-        "pre_delay": 500,
-        "post_delay": 500,
         "action": "Click",
         "expected": "与",
-        "timeout": 2000,
         "next": [
             "关闭"
         ]
     },
     "开始对局": {
         "recognition": "OCR",
-        "pre_delay": 500,
-        "post_delay": 500,
         "action": "Click",
         "expected": "开始对局",
-        "timeout": 3000,
         "next": [
             "关闭"
         ]
     },
     "关闭": {
         "recognition": "OCR",
-        "pre_delay": 500,
-        "post_delay": 500,
         "action": "Click",
         "expected": "关闭",
-        "timeout": 2000,
         "next": [
             "设置"
         ]
@@ -390,7 +329,6 @@
         "template": [
             "设置.png"
         ],
-        "timeout": 3000,
         "next": [
             "点击托管"
         ]
@@ -414,18 +352,7 @@
         "next": [
             "下一步0" // 成功则继续
         ],
-        "on_error": "重试托管" // 失败则重试
-    },
-    "重试托管": {
-        "recognition": "DirectHit",
-        "pre_delay": 500,
-        "post_delay": 500,
-        "action": "Click",
-        // "target": [0.5, 0.5],  // 点击中心关闭可能的弹窗
-        "next": [
-            "设置",
-            "点击托管"
-        ]
+        "on_error": "点击托管" // 失败则重试
     },
     "下一步0": {
         "recognition": "DirectHit",
@@ -436,23 +363,17 @@
     },
     "下一步": {
         "recognition": "OCR",
-        "pre_delay": 500,
-        "post_delay": 500,
         "action": "Click",
         "expected": "下一步",
-        "timeout": -1,
         "next": [
             "下一步1"
         ]
     },
     "下一步1": {
         "recognition": "OCR",
-        "pre_delay": 500,
-        "post_delay": 500,
         "action": "Click",
         "expected": "下一步",
         "pre_wait_freezes": 2000,
-        "timeout": -1,
         "next": [
             "确认"
         ]
@@ -461,20 +382,19 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "确认",
-        "pre_wait_freezes": 2000,
+        "pre_wait_freezes": 5000,
         "next": [
             "领取奖励",
-            "赠礼",
+            "赠礼"
+        ],
+        "on_error": [
             "单击屏幕"
         ]
     },
     "赠礼": {
         "recognition": "OCR",
-        "pre_delay": 500,
-        "post_delay": 500,
         "action": "Click",
         "expected": "赠礼",
-        "timeout": 2000,
         "next": [
             "信物",
             "驰援",
@@ -484,55 +404,40 @@
     },
     "信物": {
         "recognition": "OCR",
-        "pre_delay": 500,
-        "post_delay": 500,
         "action": "Click",
         "expected": "信物",
-        "timeout": 2000,
         "next": [
             "选择战斗或事件"
         ]
     },
     "驰援": {
         "recognition": "OCR",
-        "pre_delay": 500,
-        "post_delay": 500,
         "action": "Click",
         "expected": "驰援",
-        "timeout": 2000,
         "next": [
             "选择战斗或事件"
         ]
     },
     "资助": {
         "recognition": "OCR",
-        "pre_delay": 500,
-        "post_delay": 500,
         "action": "Click",
         "expected": "资助",
-        "timeout": 2000,
         "next": [
             "选择战斗或事件"
         ]
     },
     "武将牌": {
         "recognition": "OCR",
-        "pre_delay": 500,
-        "post_delay": 500,
         "action": "Click",
         "expected": "武将牌",
-        "timeout": 2000,
         "next": [
             "选择战斗或事件"
         ]
     },
     "并肩作战": {
         "recognition": "OCR",
-        "pre_delay": 500,
-        "post_delay": 500,
         "action": "Click",
         "expected": "并肩作战",
-        "timeout": 2000,
         "next": [
             "选择战斗或事件"
         ]
