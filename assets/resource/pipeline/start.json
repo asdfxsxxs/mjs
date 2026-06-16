@@ -3,7 +3,6 @@
         "recognition": "DirectHit",
         "pre_delay": 500,
         "post_wait_freezes": 500,
-        "timeout": 5000,
         "next": [
             "检测战斗按钮",
             "火堆",
@@ -62,8 +61,16 @@
     "领取奖励": {
         "recognition": "OCR",
         "action": "Click",
-        "repeat": 2,
         "expected": "领取奖励",
+        "next": [
+            "点击空白处"
+        ]
+    },
+    "点击空白处": {
+        "recognition": "OCR",
+        "action": "Click",
+        "repeat": 2,
+        "expected": "点击空白处继续",
         "next": [
             "开始千里单骑"
         ]
@@ -122,6 +129,7 @@
             0,
             0
         ],
+        "repeat": 2,
         "template": [
             "战斗.png",
             "战斗2.png"
@@ -424,6 +432,9 @@
         "expected": "开始对局",
         "next": [
             "关闭"
+        ],
+        "on_error": [
+            "单击屏幕"
         ]
     },
     "关闭": {
@@ -431,7 +442,7 @@
         "action": "Click",
         "expected": "关闭",
         "next": [
-            "设置"
+            "[JumpBack]设置"
         ]
     },
     "设置": {
@@ -443,7 +454,7 @@
             "设置.png"
         ],
         "next": [
-            "点击托管"
+            "[JumpBack]点击托管"
         ]
     },
     "点击托管": {
@@ -462,7 +473,7 @@
         "recognition": "OCR",
         "pre_delay": 1000, // 等待界面响应
         "action": "DoNothing", // 只识别不点击
-        "timeout": 100000,
+        "timeout": 10000,
         "expected": "离开中",
         "next": [
             "下一步0" // 成功则继续
