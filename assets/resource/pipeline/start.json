@@ -11,9 +11,11 @@
             "吕不韦商店",
             "左慈",
             "十常侍",
-            "诸葛亮"
+            "诸葛亮",
+            "事件"
         ],
         "on_error": [
+            "开始对局",
             "关闭1",
             "赠礼",
             "信物",
@@ -187,10 +189,10 @@
     "单击屏幕": {
         "recognition": "DirectHit",
         "target": [
-            649,
-            67,
-            15,
-            8
+            397,
+            73,
+            10,
+            6
         ],
         "action": "Click",
         "next": [
@@ -247,7 +249,7 @@
     "肥肥事件2": {
         "recognition": "OCR",
         "action": "Click",
-        "expected": "讨价还价",
+        "expected": "伙伴",
         "next": [
             "单击屏幕"
         ]
@@ -331,38 +333,53 @@
         ]
     },
     "十常侍选择": {
-        "recognition": "Or",
-        "any_of": [
-            "十常侍选择1",
-            "十常侍选择2",
-            "十常侍选择3"
+        "recognition": "OCR",
+        "expected": [
+            "太平百钱",
+            "装备",
+            "体力"
         ],
         "action": "Click",
         "next": [
             "单击屏幕"
         ]
     },
-    "十常侍选择1": {
-        "recognition": "OCR",
+    "事件": {
+        "recognition": "FeatureMatch",
+        "count": 4,
+        "repeat": 2,
+        "repeat_wait_freezes": 1000,
         "action": "Click",
-        "expected": "太平百钱",
+        "template": [
+            "事件.png"
+        ],
         "next": [
             "单击屏幕"
         ]
     },
-    "十常侍选择2": {
-        "recognition": "OCR",
+    "事件选项": {
+        "roi": [
+            403,
+            193,
+            531,
+            436
+        ],
+        "recognition": "ColorMatch",
         "action": "Click",
-        "expected": "装备",
+        "pre_delay": 2000,
+        "post_delay": 2000,
+        "lower": [
+            115,
+            185,
+            93
+        ],
+        "upper": [
+            135,
+            205,
+            113
+        ],
         "next": [
-            "单击屏幕"
-        ]
-    },
-    "十常侍选择3": {
-        "recognition": "OCR",
-        "action": "Click",
-        "expected": "体力",
-        "next": [
+            "事件选项",
             "单击屏幕"
         ]
     },
@@ -423,19 +440,14 @@
         ]
     },
     "选择选项": {
-        "recognition": "ColorMatch",
+        "recognition": "OCR",
         "action": "Click",
         "pre_delay": 2000,
         "post_delay": 2000,
-        "lower": [
-            115,
-            185,
-            93
-        ],
-        "upper": [
-            135,
-            205,
-            113
+        "expected": [
+            "速度",
+            "体力",
+            "太平钱"
         ],
         "next": [
             "遇袭",
@@ -485,7 +497,7 @@
         "next": [
             "点击托管"
         ],
-        "on_error": "关闭"
+        "on_error": "设置"
     },
     "点击托管": {
         "recognition": "FeatureMatch",
@@ -521,6 +533,7 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "下一步",
+        "pre_wait_freezes": 2000,
         "next": [
             "下一步1"
         ],
