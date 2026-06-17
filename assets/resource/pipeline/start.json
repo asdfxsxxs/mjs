@@ -27,7 +27,10 @@
             "遇袭",
             "领取奖励",
             "单击屏幕"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "选择战斗或事件"
+        }
     },
     "开始千里单骑": {
         "recognition": "DirectHit",
@@ -35,7 +38,10 @@
             "选择武将",
             "开始挑战",
             "继续挑战"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "开始千里单骑"
+        }
     },
     "选择武将": {
         "roi": [
@@ -46,7 +52,6 @@
         ],
         "recognition": "ColorMatch",
         "action": "Click",
-        "count": 1,
         "lower": [
             95,
             66,
@@ -59,7 +64,10 @@
         ],
         "next": [
             "吕布"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "选择武将"
+        }
     },
     "领取奖励": {
         "recognition": "OCR",
@@ -67,7 +75,10 @@
         "expected": "领取奖励",
         "next": [
             "点击空白处"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "领取奖励"
+        }
     },
     "点击空白处": {
         "recognition": "OCR",
@@ -76,7 +87,10 @@
         "expected": "点击空白处继续",
         "next": [
             "开始千里单骑"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击空白处"
+        }
     },
     "吕布": {
         "target_offset": [
@@ -90,7 +104,10 @@
         "expected": "吕布",
         "next": [
             "千里单骑"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "吕布"
+        }
     },
     "千里单骑": {
         "recognition": "OCR",
@@ -99,7 +116,10 @@
         "next": [
             "开始挑战",
             "继续挑战"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "千里单骑"
+        }
     },
     "继续挑战": {
         "recognition": "OCR",
@@ -107,7 +127,10 @@
         "expected": "继续挑战",
         "next": [
             "选择战斗或事件"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "继续挑战"
+        }
     },
     "开始挑战": {
         "recognition": "FeatureMatch",
@@ -117,7 +140,10 @@
         ],
         "next": [
             "选择战斗或事件"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "开始挑战"
+        }
     },
     "检测战斗按钮1": {
         "roi": [
@@ -143,7 +169,10 @@
         "next": [
             "开始对局"
         ],
-        "on_error": "单击屏幕"
+        "on_error": "单击屏幕",
+        "focus": {
+            "Node.Action.Starting": "检测战斗按钮1"
+        }
     },
     "检测战斗按钮2": {
         "roi": [
@@ -153,7 +182,7 @@
             472
         ],
         "recognition": "FeatureMatch",
-        "count": 2,
+        "repeat": 2,
         "action": "Click",
         "target_offset": [
             0,
@@ -168,7 +197,10 @@
         "next": [
             "开始对局"
         ],
-        "on_error": "单击屏幕"
+        "on_error": "单击屏幕",
+        "focus": {
+            "Node.Action.Starting": "检测战斗按钮2"
+        }
     },
     "检测战斗按钮": {
         "recognition": "Or",
@@ -185,7 +217,10 @@
         ],
         "next": [
             "开始对局"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "检测战斗按钮"
+        }
     },
     "单击屏幕": {
         "recognition": "DirectHit",
@@ -198,7 +233,10 @@
         "action": "Click",
         "next": [
             "选择战斗或事件"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "单击屏幕"
+        }
     },
     "火堆": {
         "roi": [
@@ -208,7 +246,6 @@
             436
         ],
         "recognition": "FeatureMatch",
-        "count": 4,
         "action": "Click",
         "repeat": 2,
         "repeat_wait_freezes": 200,
@@ -221,7 +258,10 @@
         ],
         "on_error": [
             "单击屏幕"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "火堆"
+        }
     },
     "肥肥": {
         "roi": [
@@ -231,7 +271,7 @@
             436
         ],
         "recognition": "FeatureMatch",
-        "count": 2,
+        "count": 5,
         "action": "Click",
         "repeat": 2,
         "repeat_wait_freezes": 1000,
@@ -241,7 +281,10 @@
         ],
         "next": [
             "肥肥事件1"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "肥肥"
+        }
     },
     "肥肥事件1": {
         "recognition": "OCR",
@@ -250,7 +293,10 @@
         "expected": "选择事件",
         "next": [
             "肥肥事件2"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "肥肥事件1"
+        }
     },
     "肥肥事件2": {
         "recognition": "OCR",
@@ -263,11 +309,14 @@
         ],
         "next": [
             "单击屏幕"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "肥肥事件2"
+        }
     },
     "左慈": {
         "recognition": "FeatureMatch",
-        "count": 2,
+        "count": 5,
         "repeat": 2,
         "repeat_wait_freezes": 1000,
         "action": "Click",
@@ -280,7 +329,10 @@
             "驰援",
             "资助",
             "武将牌"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "左慈"
+        }
     },
     "左慈选择武将": {
         "recognition": "OCR",
@@ -288,7 +340,10 @@
         "expected": "选择武将",
         "next": [
             "戏法二"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "左慈选择武将"
+        }
     },
     "戏法二": {
         "recognition": "OCR",
@@ -296,7 +351,10 @@
         "expected": "戏法二",
         "next": [
             "单击屏幕"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "戏法二"
+        }
     },
     "诸葛亮": {
         "recognition": "FeatureMatch",
@@ -312,9 +370,25 @@
         ],
         "on_error": [
             "单击屏幕"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "诸葛亮"
+        }
     },
     "诸葛亮选择武将": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": [
+            "选择武将"
+        ],
+        "next": [
+            "诸葛亮选择卡背"
+        ],
+        "focus": {
+            "Node.Action.Starting": "诸葛亮选择武将"
+        }
+    },
+    "诸葛亮选择卡背": {
         "recognition": "FeatureMatch",
         "count": 2,
         "action": "Click",
@@ -323,7 +397,10 @@
         ],
         "next": [
             "单击屏幕"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "诸葛亮选择卡背"
+        }
     },
     "十常侍": {
         "recognition": "FeatureMatch",
@@ -336,7 +413,10 @@
         ],
         "next": [
             "十常侍选择事件"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "十常侍"
+        }
     },
     "十常侍选择事件": {
         "recognition": "OCR",
@@ -344,7 +424,10 @@
         "expected": "选择事件",
         "next": [
             "十常侍选择"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "十常侍选择事件"
+        }
     },
     "十常侍选择": {
         "recognition": "OCR",
@@ -357,11 +440,13 @@
         "action": "Click",
         "next": [
             "单击屏幕"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "十常侍选择"
+        }
     },
     "事件": {
         "recognition": "FeatureMatch",
-        "count": 4,
         "repeat": 2,
         "repeat_wait_freezes": 1000,
         "action": "Click",
@@ -370,7 +455,10 @@
         ],
         "next": [
             "事件选项"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "事件"
+        }
     },
     "事件选项": {
         "recognition": "OCR",
@@ -392,11 +480,13 @@
         "next": [
             "事件选项",
             "单击屏幕"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "事件选项"
+        }
     },
     "吕不韦商店": {
         "recognition": "FeatureMatch",
-        "count": 4,
         "repeat": 2,
         "repeat_wait_freezes": 1000,
         "post_delay": 5000,
@@ -407,7 +497,10 @@
         "next": [
             "返回",
             "单击屏幕"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "吕不韦商店"
+        }
     },
     "巴清商店": {
         "roi": [
@@ -428,7 +521,10 @@
         "next": [
             "返回",
             "单击屏幕"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "巴清商店"
+        }
     },
     "返回": {
         "recognition": "DirectHit",
@@ -444,7 +540,10 @@
         ],
         "on_error": [
             "返回"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "返回"
+        }
     },
     "返回确认": {
         "recognition": "OCR",
@@ -452,7 +551,10 @@
         "expected": "确认",
         "next": [
             "单击屏幕"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "返回确认"
+        }
     },
     "选择选项": {
         "recognition": "OCR",
@@ -468,16 +570,26 @@
             "遇袭",
             "单击屏幕"
         ],
-        "on_error": "选择选项"
+        "on_error": "选择选项",
+        "focus": {
+            "Node.Action.Starting": "选择选项"
+        }
     },
     "遇袭": {
         "recognition": "OCR",
         "action": "Click",
-        "expected": "与",
-        "next": [
-            "关闭"
+        "expected": [
+            "与",
+            "战斗"
         ],
-        "on_error": "单击屏幕"
+        "next": [
+            "关闭",
+            "设置"
+        ],
+        "on_error": "单击屏幕",
+        "focus": {
+            "Node.Action.Starting": "遇袭"
+        }
     },
     "开始对局": {
         "recognition": "OCR",
@@ -488,11 +600,14 @@
             "关闭",
             "设置",
             "点击托管",
-            "下一步"
+            "下一步1"
         ],
         "on_error": [
             "单击屏幕"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "开始对局"
+        }
     },
     "关闭": {
         "recognition": "OCR",
@@ -501,11 +616,20 @@
         "next": [
             "设置",
             "点击托管",
-            "下一步"
+            "下一步1"
         ],
-        "on_error": "开始对局"
+        "on_error": "开始对局",
+        "focus": {
+            "Node.Action.Starting": "关闭"
+        }
     },
     "设置": {
+        "roi": [
+            1141,
+            12,
+            139,
+            138
+        ],
         "recognition": "FeatureMatch",
         "action": "Click",
         "pre_wait_freezes": 1000,
@@ -515,52 +639,57 @@
         ],
         "next": [
             "点击托管",
-            "下一步"
+            "下一步1"
         ],
-        "on_error": "设置"
+        "on_error": "设置",
+        "focus": {
+            "Node.Action.Starting": "设置"
+        }
     },
     "点击托管": {
+        "roi": [
+            1160,
+            120,
+            118,
+            94
+        ],
         "recognition": "FeatureMatch",
         "pre_wait_freezes": 2000,
-        "count": 2,
         "action": "Click",
         "template": [
             "托管.png"
         ],
         "next": [
-            "验证托管成功"
+            "验证托管"
         ],
-        "on_error": "点击托管"
+        "on_error": "点击托管",
+        "focus": {
+            "Node.Action.Starting": "点击托管"
+        }
     },
-    "验证托管成功": {
+    "验证托管": {
         "recognition": "OCR",
-        "action": "DoNothing", // 只识别不点击
+        "action": "DoNothing",
         "expected": "离开中",
         "timeout": 10000,
         "next": [
-            "下一步0" // 成功则继续
+            "下一步"
         ],
-        "on_error": "点击托管"
+        "on_error": "点击托管",
+        "focus": {
+            "Node.Action.Starting": "验证托管"
+        }
     },
-    "下一步0": {
+    "下一步": {
         "recognition": "DirectHit",
         "timeout": -1,
         "rate_limit": 10000,
         "next": [
-            "下一步"
-        ]
-    },
-    "下一步": {
-        "recognition": "OCR",
-        "action": "Click",
-        "expected": "下一步",
-        "rate_limit": 10000,
-        "pre_wait_freezes": 2000,
-        "next": [
-            "下一步1",
-            "确认"
+            "下一步1"
         ],
-        "on_error": "下一步0"
+        "focus": {
+            "Node.Action.Starting": "下一步"
+        }
     },
     "下一步1": {
         "recognition": "OCR",
@@ -568,9 +697,13 @@
         "expected": "下一步",
         "pre_wait_freezes": 2000,
         "next": [
+            "下一步1",
             "确认"
         ],
-        "on_error": "下一步"
+        "on_error": "下一步",
+        "focus": {
+            "Node.Action.Starting": "下一步1"
+        }
     },
     "确认": {
         "recognition": "OCR",
@@ -584,7 +717,10 @@
         "on_error": [
             "确认",
             "单击屏幕"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "确认"
+        }
     },
     "赠礼": {
         "roi": [
@@ -606,57 +742,75 @@
         "on_error": [
             "赠礼",
             "确认"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "赠礼"
+        }
     },
     "信物": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "信物",
-        "post_delay": 10000,
+        "post_delay": 5000,
         "next": [
             "单击屏幕"
         ],
-        "on_error": "信物"
+        "on_error": "信物",
+        "focus": {
+            "Node.Action.Starting": "信物"
+        }
     },
     "驰援": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "驰援",
-        "post_delay": 10000,
+        "post_delay": 5000,
         "next": [
             "单击屏幕"
         ],
-        "on_error": "驰援"
+        "on_error": "驰援",
+        "focus": {
+            "Node.Action.Starting": "驰援"
+        }
     },
     "资助": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "资助",
-        "post_delay": 10000,
+        "post_delay": 5000,
         "next": [
             "单击屏幕"
         ],
-        "on_error": "资助"
+        "on_error": "资助",
+        "focus": {
+            "Node.Action.Starting": "资助"
+        }
     },
     "武将牌": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "武将牌",
-        "post_delay": 10000,
+        "post_delay": 5000,
         "next": [
             "单击屏幕"
         ],
-        "on_error": "武将牌"
+        "on_error": "武将牌",
+        "focus": {
+            "Node.Action.Starting": "武将牌"
+        }
     },
     "并肩作战": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "并肩作战",
-        "post_delay": 10000,
+        "post_delay": 5000,
         "next": [
             "单击屏幕"
         ],
-        "on_error": "并肩作战"
+        "on_error": "并肩作战",
+        "focus": {
+            "Node.Action.Starting": "并肩作战"
+        }
     },
     "关闭1": {
         "recognition": "FeatureMatch",
@@ -665,6 +819,9 @@
         ],
         "next": [
             "单击屏幕"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "关闭1"
+        }
     }
 }
