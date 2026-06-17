@@ -14,6 +14,7 @@
             "事件"
         ],
         "on_error": [
+            "事件选项",
             "开始对局",
             "关闭1",
             "赠礼",
@@ -21,6 +22,7 @@
             "驰援",
             "资助",
             "武将牌",
+            "并肩作战",
             "选择选项",
             "遇袭",
             "领取奖励",
@@ -209,13 +211,16 @@
         "count": 4,
         "action": "Click",
         "repeat": 2,
-        "repeat_wait_freezes": 1000,
+        "repeat_wait_freezes": 200,
         "template": [
             "火堆.png",
             "火堆2.png"
         ],
         "next": [
             "选择选项"
+        ],
+        "on_error": [
+            "单击屏幕"
         ]
     },
     "肥肥": {
@@ -230,6 +235,7 @@
         "action": "Click",
         "repeat": 2,
         "repeat_wait_freezes": 1000,
+        "post_wait_freezes": 1000,
         "template": [
             "肥肥.png"
         ],
@@ -240,6 +246,7 @@
     "肥肥事件1": {
         "recognition": "OCR",
         "action": "Click",
+        "post_wait_freezes": 1000,
         "expected": "选择事件",
         "next": [
             "肥肥事件2"
@@ -248,7 +255,9 @@
     "肥肥事件2": {
         "recognition": "OCR",
         "action": "Click",
+        "post_wait_freezes": 1000,
         "expected": [
+            "战斗",
             "讨价还价",
             "伙伴技能"
         ],
@@ -365,16 +374,20 @@
     },
     "事件选项": {
         "recognition": "OCR",
+        "action": "Click",
         "expected": [
             "速度+",
             "太平钱",
-            "战法伤害+1",
+            "战法伤害+",
             "杀的伤害+",
             "场战斗后",
             "同意赌约",
             "向魏王揭发",
             "拒绝迷信",
-            "确认"
+            "确认",
+            "向官府叫发",
+            "试图叫醒",
+            "添加"
         ],
         "next": [
             "事件选项",
@@ -428,6 +441,9 @@
         ],
         "next": [
             "返回确认"
+        ],
+        "on_error": [
+            "返回"
         ]
     },
     "返回确认": {
@@ -452,7 +468,7 @@
             "遇袭",
             "单击屏幕"
         ],
-        "on_error": "火堆"
+        "on_error": "选择选项"
     },
     "遇袭": {
         "recognition": "OCR",
@@ -493,7 +509,7 @@
         "recognition": "FeatureMatch",
         "action": "Click",
         "pre_wait_freezes": 1000,
-        "post_delay": 7000,
+        "post_delay": 2000,
         "template": [
             "设置.png"
         ],
@@ -529,6 +545,7 @@
     "下一步0": {
         "recognition": "DirectHit",
         "timeout": -1,
+        "rate_limit": 10000,
         "next": [
             "下一步"
         ]
@@ -537,6 +554,7 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "下一步",
+        "rate_limit": 10000,
         "pre_wait_freezes": 2000,
         "next": [
             "下一步1",
@@ -582,7 +600,8 @@
             "信物",
             "驰援",
             "资助",
-            "武将牌"
+            "武将牌",
+            "并肩作战"
         ],
         "on_error": [
             "赠礼",
@@ -593,6 +612,7 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "信物",
+        "post_delay": 10000,
         "next": [
             "单击屏幕"
         ],
@@ -602,6 +622,7 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "驰援",
+        "post_delay": 10000,
         "next": [
             "单击屏幕"
         ],
@@ -611,6 +632,7 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "资助",
+        "post_delay": 10000,
         "next": [
             "单击屏幕"
         ],
@@ -620,6 +642,7 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "武将牌",
+        "post_delay": 10000,
         "next": [
             "单击屏幕"
         ],
@@ -629,9 +652,11 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "并肩作战",
+        "post_delay": 10000,
         "next": [
             "单击屏幕"
-        ]
+        ],
+        "on_error": "并肩作战"
     },
     "关闭1": {
         "recognition": "FeatureMatch",
