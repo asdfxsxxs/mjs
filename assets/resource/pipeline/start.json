@@ -145,36 +145,7 @@
             "Node.Action.Starting": "开始挑战"
         }
     },
-    "检测战斗按钮1": {
-        "roi": [
-            393,
-            201,
-            889,
-            472
-        ],
-        "recognition": "TemplateMatch",
-        "threshold": 0.5,
-        "action": "Click",
-        "target_offset": [
-            0,
-            -30,
-            0,
-            0
-        ],
-        "repeat": 2,
-        "template": [
-            "战斗.png",
-            "战斗2.png"
-        ],
-        "next": [
-            "开始对局"
-        ],
-        "on_error": "单击屏幕",
-        "focus": {
-            "Node.Action.Starting": "检测战斗按钮1"
-        }
-    },
-    "检测战斗按钮2": {
+    "检测战斗按钮": {
         "roi": [
             393,
             201,
@@ -198,26 +169,6 @@
             "开始对局"
         ],
         "on_error": "单击屏幕",
-        "focus": {
-            "Node.Action.Starting": "检测战斗按钮2"
-        }
-    },
-    "检测战斗按钮": {
-        "recognition": "Or",
-        "any_of": [
-            "检测战斗按钮1",
-            "检测战斗按钮2"
-        ],
-        "action": "Click",
-        "target_offset": [
-            0,
-            -30,
-            0,
-            0
-        ],
-        "next": [
-            "开始对局"
-        ],
         "focus": {
             "Node.Action.Starting": "检测战斗按钮"
         }
@@ -356,6 +307,61 @@
             "Node.Action.Starting": "戏法二"
         }
     },
+    "狗卡": {
+        "recognition": "FeatureMatch",
+        "count": 5,
+        "action": "Click",
+        "repeat": 2,
+        "repeat_wait_freezes": 1000,
+        "template": [
+            "狗卡.png"
+        ],
+        "next": [
+            "狗卡选择事件"
+        ],
+        "focus": {
+            "Node.Action.Starting": "狗卡"
+        }
+    },
+    "狗卡选择事件": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": [
+            "选择事件"
+        ],
+        "next": [
+            "拒接投喂"
+        ],
+        "focus": {
+            "Node.Action.Starting": "狗卡选择事件"
+        }
+    },
+    "拒接投喂": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": [
+            "拒接投喂"
+        ],
+        "next": [
+            "停止转动"
+        ],
+        "focus": {
+            "Node.Action.Starting": "拒接投喂"
+        }
+    },
+    "停止转动": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": [
+            "停止转动"
+        ],
+        "next": [
+            "单击屏幕"
+        ],
+        "focus": {
+            "Node.Action.Starting": "停止转动"
+        }
+    },
     "诸葛亮": {
         "recognition": "FeatureMatch",
         "count": 5,
@@ -463,33 +469,50 @@
     "事件选项": {
         "recognition": "OCR",
         "action": "Click",
+        "post_delay": 1000,
         "expected": [
             "速度+",
             "太平钱",
-            "战法伤害+",
+            "战法增伤+",
             "杀的伤害+",
             "场战斗后",
             "同意赌约",
             "向魏王揭发",
             "拒绝迷信",
-            "确认",
             "向官府叫发",
             "试图叫醒",
-            "添加"
+            "添加",
+            "确认"
         ],
         "next": [
             "事件选项",
+            "事件战斗",
             "单击屏幕"
         ],
         "focus": {
             "Node.Action.Starting": "事件选项"
         }
     },
+    "事件战斗": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": [
+            "与"
+        ],
+        "next": [
+            "关闭",
+            "设置"
+        ],
+        "on_error": "单击屏幕",
+        "focus": {
+            "Node.Action.Starting": "事件战斗"
+        }
+    },
     "吕不韦商店": {
         "recognition": "FeatureMatch",
         "repeat": 2,
         "repeat_wait_freezes": 1000,
-        "post_delay": 5000,
+        "post_delay": 3000,
         "action": "Click",
         "template": [
             "吕不韦商店.png"
@@ -513,7 +536,7 @@
         "count": 5,
         "repeat": 2,
         "repeat_wait_freezes": 1000,
-        "post_delay": 5000,
+        "post_delay": 3000,
         "action": "Click",
         "template": [
             "巴清商店.png"
@@ -579,8 +602,7 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": [
-            "与",
-            "战斗"
+            "与"
         ],
         "next": [
             "关闭",
@@ -603,6 +625,7 @@
             "下一步1"
         ],
         "on_error": [
+            "检测战斗按钮",
             "单击屏幕"
         ],
         "focus": {
@@ -625,10 +648,10 @@
     },
     "设置": {
         "roi": [
-            1141,
-            12,
-            139,
-            138
+            1198,
+            54,
+            67,
+            67
         ],
         "recognition": "FeatureMatch",
         "action": "Click",
@@ -683,7 +706,7 @@
     "下一步": {
         "recognition": "DirectHit",
         "timeout": -1,
-        "rate_limit": 10000,
+        "rate_limit": 5000,
         "next": [
             "下一步1"
         ],
@@ -695,7 +718,6 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "下一步",
-        "pre_wait_freezes": 2000,
         "next": [
             "下一步1",
             "确认"
@@ -709,7 +731,8 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "确认",
-        "pre_wait_freezes": 2000,
+        "post_wait_freezes": 2000,
+        "timeout": 10000,
         "next": [
             "领取奖励",
             "赠礼"
@@ -732,6 +755,7 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "赠礼",
+        "post_wait_freezes": 1000,
         "next": [
             "信物",
             "驰援",
