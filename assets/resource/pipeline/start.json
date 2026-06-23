@@ -1,8 +1,6 @@
 {
     "选择战斗或事件": {
         "recognition": "DirectHit",
-        "pre_delay": 500,
-        "post_wait_freezes": 500,
         "next": [
             "忽略",
             "检测战斗按钮",
@@ -247,7 +245,6 @@
         "recognition": "FeatureMatch",
         "action": "Click",
         "repeat": 2,
-        "repeat_wait_freezes": 200,
         "template": [
             "火堆.png",
             "火堆2.png"
@@ -273,8 +270,6 @@
         "count": 5,
         "action": "Click",
         "repeat": 2,
-        "repeat_wait_freezes": 1000,
-        "post_wait_freezes": 1000,
         "template": [
             "肥肥.png"
         ],
@@ -288,7 +283,6 @@
     "肥肥事件1": {
         "recognition": "OCR",
         "action": "Click",
-        "post_wait_freezes": 1000,
         "expected": "选择事件",
         "next": [
             "肥肥事件2"
@@ -300,7 +294,6 @@
     "肥肥事件2": {
         "recognition": "OCR",
         "action": "Click",
-        "post_wait_freezes": 1000,
         "expected": [
             "战斗",
             "讨价还价",
@@ -317,7 +310,6 @@
         "recognition": "FeatureMatch",
         "count": 5,
         "repeat": 2,
-        "repeat_wait_freezes": 1000,
         "action": "Click",
         "template": [
             "左慈.png"
@@ -360,7 +352,6 @@
         "count": 5,
         "action": "Click",
         "repeat": 2,
-        "repeat_wait_freezes": 1000,
         "template": [
             "狗卡.png"
         ],
@@ -415,7 +406,6 @@
         "count": 5,
         "action": "Click",
         "repeat": 2,
-        "repeat_wait_freezes": 1000,
         "template": [
             "诸葛亮.png"
         ],
@@ -461,7 +451,6 @@
         "count": 7,
         "action": "Click",
         "repeat": 2,
-        "repeat_wait_freezes": 1000,
         "template": [
             "十常侍.png"
         ],
@@ -508,7 +497,6 @@
         ],
         "recognition": "FeatureMatch",
         "repeat": 2,
-        "repeat_wait_freezes": 1000,
         "action": "Click",
         "template": [
             "事件.png"
@@ -523,7 +511,6 @@
     "事件选项": {
         "recognition": "OCR",
         "action": "Click",
-        "post_delay": 1000,
         "expected": [
             "速度+",
             "太平钱",
@@ -565,10 +552,10 @@
     "吕不韦商店": {
         "recognition": "FeatureMatch",
         "repeat": 2,
-        "repeat_wait_freezes": 1000,
-        "post_delay": 3000,
         "action": "Click",
+        "repeat_delay": 500,
         "count": 8,
+        "post_delay": 500,
         "template": [
             "吕不韦商店.png"
         ],
@@ -589,9 +576,9 @@
         ],
         "recognition": "FeatureMatch",
         "count": 5,
+        "repeat_delay": 500,
+        "post_delay": 500,
         "repeat": 2,
-        "repeat_wait_freezes": 1000,
-        "post_delay": 3000,
         "action": "Click",
         "template": [
             "巴清商店.png"
@@ -673,8 +660,7 @@
     "选择选项": {
         "recognition": "OCR",
         "action": "Click",
-        "pre_delay": 1000,
-        "post_delay": 5000,
+        "post_delay": 1000,
         "expected": [
             "速度",
             "体力",
@@ -712,8 +698,6 @@
     "开始对局": {
         "recognition": "OCR",
         "action": "Click",
-        "timeout": 10000,
-        "post_delay": 5000,
         "expected": "开始对局",
         "next": [
             "关闭",
@@ -758,12 +742,11 @@
         ],
         "recognition": "FeatureMatch",
         "action": "Click",
-        "pre_wait_freezes": 1000,
-        "post_delay": 2000,
         "template": [
             "设置.png"
         ],
         "next": [
+            "关闭",
             "点击托管",
             "下一步1"
         ],
@@ -780,7 +763,6 @@
             94
         ],
         "recognition": "FeatureMatch",
-        "pre_wait_freezes": 2000,
         "action": "Click",
         "template": [
             "托管.png"
@@ -797,7 +779,7 @@
         "recognition": "OCR",
         "action": "DoNothing",
         "expected": "离开中",
-        "timeout": 10000,
+        "timeout": 5000,
         "next": [
             "下一步"
         ],
@@ -809,7 +791,7 @@
     "下一步": {
         "recognition": "DirectHit",
         "timeout": -1,
-        "rate_limit": 5000,
+        "rate_limit": 3000,
         "next": [
             "下一步1"
         ],
@@ -834,11 +816,11 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "确认",
-        "post_wait_freezes": 2000,
         "timeout": 10000,
+        "post_delay": 1000,
         "next": [
-            "弹窗",
             "领取奖励",
+            "弹窗",
             "赠礼1",
             "赠礼2",
             "赠礼3"
@@ -865,9 +847,9 @@
             "关羽",
             "春花",
             "马超",
+            "甄宓",
             "许褚"
         ],
-        "post_wait_freezes": 1000,
         "next": [
             "信物",
             "驰援",
@@ -899,7 +881,6 @@
             "曹丕",
             "典韦"
         ],
-        "post_wait_freezes": 1000,
         "next": [
             "驰援",
             "资助",
@@ -925,7 +906,6 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "赠礼",
-        "post_wait_freezes": 1000,
         "next": [
             "驰援",
             "资助",
@@ -945,7 +925,6 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "信物",
-        "post_delay": 5000,
         "next": [
             "单击屏幕"
         ],
@@ -958,7 +937,6 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "驰援",
-        "post_delay": 5000,
         "next": [
             "单击屏幕"
         ],
@@ -971,7 +949,6 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "资助",
-        "post_delay": 5000,
         "next": [
             "单击屏幕"
         ],
@@ -984,7 +961,6 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "武将牌",
-        "post_delay": 5000,
         "next": [
             "单击屏幕"
         ],
@@ -997,7 +973,6 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "并肩作战",
-        "post_delay": 5000,
         "next": [
             "单击屏幕"
         ],
@@ -1025,7 +1000,6 @@
             "确认",
             "忽略"
         ],
-        "post_delay": 5000,
         "next": [
             "赠礼1",
             "赠礼2",
@@ -1034,7 +1008,8 @@
             "驰援",
             "资助",
             "武将牌",
-            "并肩作战"
+            "并肩作战",
+            "领取奖励"
         ],
         "on_error": [
             "单击屏幕"
