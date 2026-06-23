@@ -15,6 +15,8 @@
         ],
         "on_error": [
             "开始对局",
+            "肥肥事件2",
+            "左慈选择武将",
             "关闭1",
             "赠礼1",
             "赠礼2",
@@ -247,14 +249,13 @@
         ],
         "recognition": "FeatureMatch",
         "action": "Click",
-        "repeat": 2,
-        "repeat_delay": 500,
         "template": [
             "火堆.png",
             "火堆2.png"
         ],
         "next": [
-            "选择选项"
+            "选择选项",
+            "火堆"
         ],
         "on_error": [
             "单击屏幕"
@@ -288,7 +289,9 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "选择事件",
+        "post_delay": 2000,
         "next": [
+            "肥肥事件1",
             "肥肥事件2"
         ],
         "focus": {
@@ -296,15 +299,22 @@
         }
     },
     "肥肥事件2": {
+        "roi": [
+            421,
+            196,
+            561,
+            415
+        ],
         "recognition": "OCR",
         "action": "Click",
-        "pre_delay": 1000,
+        "post_delay": 1000,
         "expected": [
             "战斗",
             "讨价还价",
             "伙伴技能"
         ],
         "next": [
+            "肥肥事件2",
             "单击屏幕"
         ],
         "focus": {
@@ -314,17 +324,14 @@
     "左慈": {
         "recognition": "FeatureMatch",
         "count": 5,
-        "repeat": 2,
         "action": "Click",
         "template": [
             "左慈.png"
         ],
         "next": [
+            "弹窗",
             "左慈选择武将",
-            "信物",
-            "驰援",
-            "资助",
-            "武将牌"
+            "左慈"
         ],
         "focus": {
             "Node.Action.Starting": "左慈"
@@ -334,22 +341,42 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "选择武将",
+        "post_delay": 2000,
         "next": [
-            "戏法二"
+            "弹窗",
+            "左慈戏法选择",
+            "左慈选择武将"
+        ],
+        "on_error": [
+            "单击屏幕"
         ],
         "focus": {
             "Node.Action.Starting": "左慈选择武将"
         }
     },
-    "戏法二": {
+    "左慈戏法选择": {
+        "roi": [
+            421,
+            196,
+            561,
+            415
+        ],
         "recognition": "OCR",
         "action": "Click",
-        "expected": "戏法二",
+        "expected": [
+            "随机两项战役属性-",
+            "随机一项战役属性+",
+            "加成最低的属性+",
+            "加成最高的属性-",
+            "翻倍"
+        ],
         "next": [
+            "弹窗",
+            "左慈戏法选择",
             "单击屏幕"
         ],
         "focus": {
-            "Node.Action.Starting": "戏法二"
+            "Node.Action.Starting": "左慈戏法选择"
         }
     },
     "狗卡": {
@@ -361,7 +388,8 @@
             "狗卡.png"
         ],
         "next": [
-            "狗卡选择事件"
+            "狗卡选择事件",
+            "狗卡"
         ],
         "focus": {
             "Node.Action.Starting": "狗卡"
@@ -374,7 +402,12 @@
             "选择事件"
         ],
         "next": [
+            "弹窗",
+            "狗卡选择事件",
             "拒绝投喂"
+        ],
+        "on_error": [
+            "单击屏幕"
         ],
         "focus": {
             "Node.Action.Starting": "狗卡选择事件"
@@ -387,7 +420,12 @@
             "拒绝投喂"
         ],
         "next": [
+            "弹窗",
+            "拒绝投喂",
             "停止转动"
+        ],
+        "on_error": [
+            "单击屏幕"
         ],
         "focus": {
             "Node.Action.Starting": "拒绝投喂"
@@ -400,6 +438,8 @@
             "停止转动"
         ],
         "next": [
+            "弹窗",
+            "停止转动",
             "单击屏幕"
         ],
         "focus": {
@@ -415,7 +455,8 @@
             "诸葛亮.png"
         ],
         "next": [
-            "诸葛亮选择武将"
+            "诸葛亮选择武将",
+            "诸葛亮"
         ],
         "on_error": [
             "单击屏幕"
@@ -431,7 +472,10 @@
             "选择武将"
         ],
         "next": [
-            "诸葛亮选择卡背"
+            "弹窗",
+            "诸葛亮选择武将",
+            "诸葛亮选择卡背",
+            "诸葛亮"
         ],
         "focus": {
             "Node.Action.Starting": "诸葛亮选择武将"
@@ -445,6 +489,9 @@
             "卡背.png"
         ],
         "next": [
+            "弹窗",
+            "诸葛亮选择卡背",
+            "诸葛亮选择武将",
             "单击屏幕"
         ],
         "focus": {
@@ -453,7 +500,6 @@
     },
     "十常侍": {
         "recognition": "FeatureMatch",
-        "count": 7,
         "action": "Click",
         "repeat": 2,
         "template": [
@@ -461,6 +507,10 @@
         ],
         "next": [
             "十常侍选择事件"
+        ],
+        "on_error": [
+            "十常侍",
+            "单击屏幕"
         ],
         "focus": {
             "Node.Action.Starting": "十常侍"
@@ -471,13 +521,20 @@
         "action": "Click",
         "expected": "选择事件",
         "next": [
-            "十常侍选择"
+            "十常侍选择",
+            "十常侍选择事件"
         ],
         "focus": {
             "Node.Action.Starting": "十常侍选择事件"
         }
     },
     "十常侍选择": {
+        "roi": [
+            421,
+            196,
+            561,
+            415
+        ],
         "recognition": "OCR",
         "expected": [
             "太平百钱",
@@ -487,6 +544,7 @@
         ],
         "action": "Click",
         "next": [
+            "十常侍选择",
             "单击屏幕"
         ],
         "focus": {
@@ -508,7 +566,8 @@
             "事件.png"
         ],
         "next": [
-            "事件选项"
+            "事件选项",
+            "事件"
         ],
         "focus": {
             "Node.Action.Starting": "事件"
@@ -517,6 +576,7 @@
     "事件选项": {
         "recognition": "OCR",
         "action": "Click",
+        "post_delay": 500,
         "expected": [
             "出力",
             "假意应允",
@@ -560,16 +620,15 @@
     },
     "吕不韦商店": {
         "recognition": "FeatureMatch",
-        "repeat": 2,
         "action": "Click",
-        "repeat_delay": 500,
         "count": 8,
         "post_delay": 500,
         "template": [
             "吕不韦商店.png"
         ],
         "next": [
-            "吕不韦返回"
+            "吕不韦返回",
+            "吕不韦商店"
         ],
         "on_error": [
             "单击屏幕"
@@ -587,15 +646,14 @@
         ],
         "recognition": "FeatureMatch",
         "count": 5,
-        "repeat_delay": 500,
         "post_delay": 500,
-        "repeat": 2,
         "action": "Click",
         "template": [
             "巴清商店.png"
         ],
         "next": [
-            "巴清返回"
+            "巴清返回",
+            "巴清商店"
         ],
         "on_error": [
             "单击屏幕"
@@ -629,6 +687,7 @@
             7
         ],
         "next": [
+            "弹窗",
             "返回确认"
         ],
         "on_error": [
@@ -652,6 +711,7 @@
             7
         ],
         "next": [
+            "弹窗",
             "返回确认"
         ],
         "on_error": [
@@ -687,7 +747,8 @@
         ],
         "on_error": [
             "火堆",
-            "选择选项"
+            "选择选项",
+            "弹窗"
         ],
         "focus": {
             "Node.Action.Starting": "选择选项"
@@ -700,6 +761,7 @@
             "与"
         ],
         "next": [
+            "遇袭",
             "关闭",
             "设置"
         ],
@@ -715,6 +777,8 @@
         "action": "Click",
         "expected": "开始对局",
         "next": [
+            "弹窗",
+            "开始对局",
             "关闭",
             "设置",
             "点击托管",
@@ -874,7 +938,8 @@
         ],
         "on_error": [
             "赠礼1",
-            "确认"
+            "确认",
+            "弹窗"
         ],
         "focus": {
             "Node.Action.Starting": "赠礼1"
@@ -905,7 +970,8 @@
         ],
         "on_error": [
             "赠礼2",
-            "确认"
+            "确认",
+            "弹窗"
         ],
         "focus": {
             "Node.Action.Starting": "赠礼2"
@@ -929,6 +995,7 @@
             "信物"
         ],
         "on_error": [
+            "弹窗",
             "赠礼3",
             "确认"
         ],
@@ -941,9 +1008,9 @@
         "action": "Click",
         "expected": "信物",
         "next": [
+            "信物",
             "单击屏幕"
         ],
-        "on_error": "信物",
         "focus": {
             "Node.Action.Starting": "信物"
         }
@@ -953,9 +1020,9 @@
         "action": "Click",
         "expected": "驰援",
         "next": [
+            "驰援",
             "单击屏幕"
         ],
-        "on_error": "驰援",
         "focus": {
             "Node.Action.Starting": "驰援"
         }
@@ -965,9 +1032,9 @@
         "action": "Click",
         "expected": "资助",
         "next": [
+            "资助",
             "单击屏幕"
         ],
-        "on_error": "资助",
         "focus": {
             "Node.Action.Starting": "资助"
         }
@@ -977,9 +1044,9 @@
         "action": "Click",
         "expected": "武将牌",
         "next": [
+            "武将牌",
             "单击屏幕"
         ],
-        "on_error": "武将牌",
         "focus": {
             "Node.Action.Starting": "武将牌"
         }
@@ -989,9 +1056,9 @@
         "action": "Click",
         "expected": "并肩作战",
         "next": [
+            "并肩作战",
             "单击屏幕"
         ],
-        "on_error": "并肩作战",
         "focus": {
             "Node.Action.Starting": "并肩作战"
         }
@@ -1016,6 +1083,7 @@
             "忽略"
         ],
         "next": [
+            "弹窗",
             "赠礼1",
             "赠礼2",
             "赠礼3",
@@ -1024,7 +1092,23 @@
             "资助",
             "武将牌",
             "并肩作战",
-            "领取奖励"
+            "领取奖励",
+            "火堆",
+            "肥肥",
+            "巴清商店",
+            "吕不韦商店",
+            "开始对局",
+            "检测战斗按钮",
+            "十常侍",
+            "左慈",
+            "事件",
+            "狗卡",
+            "吕不韦返回",
+            "巴清返回",
+            "左慈选择武将",
+            "左慈戏法选择",
+            "诸葛亮选择卡背",
+            "诸葛亮选择武将"
         ],
         "on_error": [
             "单击屏幕"
