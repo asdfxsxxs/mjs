@@ -245,6 +245,7 @@
         "recognition": "FeatureMatch",
         "action": "Click",
         "repeat": 2,
+        "repeat_delay": 500,
         "template": [
             "火堆.png",
             "火堆2.png"
